@@ -25,4 +25,4 @@ CONFIG_FIRMWARE_CPU_900MHZ=y
 
 端口WiFi设置：trunk/user/shared/defaults.h
 
-修改logo：trunk/user/www/n56u_ribbon_fixed/bootstrap/img  里替换asus_logo.png
+修改logo：trunk/user/www/n56u_ribbon_fixed/bootstrap/img/asus_logo.png  里替换asus_logo.png
