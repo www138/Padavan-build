@@ -8,13 +8,16 @@
 
 超频设置：trunk\linux-3.4.x\arch\mips\rt2880\init.c
 (0*362=1100 0*3B2=1200)
- #if defined(CONFIG_RALINK_MT7621_PLL900)
+
+#if defined(CONFIG_RALINK_MT7621_PLL900)
            if ((reg & 0x7ff) != 0x3B2) {
                          reg &= ~(0x7ff);
                          reg |=  (0x3B2);
                          
 trunk\configs\templates\NETGEAR-BZV.config
+
 CONFIG_FIRMWARE_CPU_900MHZ=y
+
 将CONFIG_FIRMWARE_CPU_900MHZ前的注释“#”去掉就好
 
 端口WiFi设置：trunk/user/shared/defaults.h
