@@ -6,7 +6,7 @@
 3.点击右上角的 Star 星星按钮即可开始自动编译（自己点击才会编译）。修改配置后若需再次编译，先点击Star取消Star后，再点击Star即可重新编译。
 编译完成后在Actions页面底部下载固件。
 
-超频设置：trunk\linux-3.4.x\arch\mips\rt2880\init.c
+超频设置：trunk/linux-3.4.x/arch/mips/rt2880/init.c
 (0x362=1100 0x3B2=1200)
 
 #if defined(CONFIG_RALINK_MT7621_PLL900)
@@ -17,7 +17,7 @@
                          
                          reg |=  (0x3B2);
                          
-trunk\configs\templates\NETGEAR-BZV.config
+trunk/configs/templates/NETGEAR-BZV.config
 
 CONFIG_FIRMWARE_CPU_900MHZ=y
 
