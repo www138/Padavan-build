@@ -7,11 +7,14 @@
 编译完成后在Actions页面底部下载固件。
 
 超频设置：trunk\linux-3.4.x\arch\mips\rt2880\init.c
-(0*362=1100 0*3B2=1200)
+(0x362=1100 0x3B2=1200)
 
 #if defined(CONFIG_RALINK_MT7621_PLL900)
+
            if ((reg & 0x7ff) != 0x3B2) {
+           
                          reg &= ~(0x7ff);
+                         
                          reg |=  (0x3B2);
                          
 trunk\configs\templates\NETGEAR-BZV.config
