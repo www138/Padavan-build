@@ -1,4 +1,4 @@
-name: K2P_NANO
+name: DIR-882
 
 on: 
   release:
@@ -37,7 +37,7 @@ jobs:
         mkdir -p /opt/images/
     - name: Build Firmware
       env:
-        TNAME: K2P_nano
+        TNAME: DIR-882
       run: |
         cd /opt/rt-n56u/trunk
         if [ ! -f configs/templates/$TNAME.config ] ; then
@@ -58,7 +58,7 @@ jobs:
         #以下选项是定义你需要的功能（y=集成,n=忽略），重新写入到.config文件
         ######################################################################
         ##科学上网##
-        echo "CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS=n" >> .config #科学上网插件，选择n后全部有关插件都不集成
+        echo "CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS=y" >> .config #科学上网插件，选择n后全部有关插件都不集成
         echo "CONFIG_FIRMWARE_INCLUDE_V2RAY=n" >> .config #集成v2ray执行文件，如果不集成，会从网上下载下来执行，不影响正常使用
         echo "CONFIG_FIRMWARE_INCLUDE_XRAY=n" >> .config #集成xray执行文件，可以代替v2ray，大小5M多，如果闪存太小不够还是建议使用v2ray
         echo "CONFIG_FIRMWARE_INCLUDE_TROJAN=n" >> .config #集成trojan执行文件，如果不集成，会从网上下载下来执行，不影响正常使用
@@ -86,7 +86,7 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_WIREGUARD=n" >> .config #wireguard ~10k
         echo "CONFIG_FIRMWARE_INCLUDE_FRPC=n" >> .config #frpc
         ##内网穿透服务##
-        echo "CONFIG_FIRMWARE_INCLUDE_ALDRIVER=y" >> .config  #ALDRIVER  ~3m
+        echo "CONFIG_FIRMWARE_INCLUDE_ALDRIVER=n" >> .config  #ALDRIVER  ~3m
 
 
         #########################################################################################
@@ -102,5 +102,5 @@ jobs:
       uses: actions/upload-artifact@master
       if: always()
       with:
-        name: K2P_NANO
+        name: DIR-882
         path: /opt/images
